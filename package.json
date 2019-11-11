@@ -1,0 +1,45 @@
+{
+  "name": "rxjs-exponential-backoff-retry",
+  "version": "0.0.2",
+  "description": "Esponential backoff retry for rxjs",
+  "main": "index.js",
+  "author": "Egor Nikolaev <eg0r.n1k0l43v@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn tsc -P tsconfig.json && yarn tsc -P tsconfig.es.json",
+    "prettier:base": "prettier \"**/*.{js,ts{,x},yml,yaml,json,md}\"",
+    "prettier:write": "yarn prettier:base --write",
+    "prettier:check": "yarn prettier:base --list-different",
+    "eslint:check": "eslint --format stylish \"!(node_modules)/**/*.ts{,x}\"",
+    "lint:check": "yarn eslint:check",
+    "lint:write": "yarn eslint:check --fix",
+    "precommit": "lint-staged",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.9",
+    "@typescript-eslint/eslint-plugin": "^2.6.1",
+    "@typescript-eslint/parser": "^2.6.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3",
+    "tslib": "^1.9.3"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx}": [
+      "eslint --format stylish --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,yml,yaml,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}
