@@ -1,8 +1,19 @@
 {
   "name": "rxjs-exponential-backoff-retry",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Esponential backoff retry for rxjs",
-  "main": "index.js",
+  "main": "build/index.js",
+  "module": "es/index.js",
+  "typings": "build/index.d.ts",
+  "files": [
+    "src",
+    "build",
+    "es"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3g0r/rxjs-exponential-backoff-retry.git"
+  },
   "author": "Egor Nikolaev <eg0r.n1k0l43v@gmail.com>",
   "license": "MIT",
   "scripts": {
